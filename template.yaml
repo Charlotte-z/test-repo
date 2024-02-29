@@ -1,0 +1,4 @@
+replicaCount: 3
+image:
+  repository: ${{ secret.TEST2 }}
+  tag: ${{ secret.TEST3 }}

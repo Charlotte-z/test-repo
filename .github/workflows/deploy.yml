@@ -10,5 +10,22 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+
       - name: Run a script
         run: echo "Repository B action triggered!"
+
+      # Assuming environment variables are set up or exported earlier in the job
+      - name: Replace variables in template
+        env:
+          # Example environment variables - these would need to be set or exported appropriately
+          REPLICA_COUNT: 2
+          REPOSITORY: myrepo/myimage
+          TAG: latest
+        run: |
+          envsubst < template.yaml > values.yaml
+
+      - name: Upload values file to artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: values-file
+          path: values.yaml
