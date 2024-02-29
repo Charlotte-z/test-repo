@@ -24,8 +24,10 @@ jobs:
         run: |
           envsubst < template.yaml > values.yaml
 
-      - name: Upload values file to artifacts
-        uses: actions/upload-artifact@v2
-        with:
-          name: values-file
-          path: values.yaml
+      - name: Echo the values file
+        run: cat values.yaml
+      # - name: Upload values file to artifacts
+      #   uses: actions/upload-artifact@v2
+      #   with:
+      #     name: values-file
+      #     path: values.yaml
