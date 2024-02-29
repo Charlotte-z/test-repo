@@ -1,4 +1,4 @@
-replicaCount: 3
+replicaCount: $REPLICA_COUNT
 image:
-  repository: ${{ secret.TEST2 }}
-  tag: ${{ secret.TEST3 }}
+  repository: $REPOSITORY
+  tag: $TAG
