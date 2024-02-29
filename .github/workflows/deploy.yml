@@ -19,8 +19,8 @@ jobs:
         env:
           # Example environment variables - these would need to be set or exported appropriately
           REPLICA_COUNT: 2
-          TEST2: {{ secrets.TEST2 }}
-          TEST3: {{ secrets.TEST3 }}
+          TEST2: ${{ secrets.TEST2 }}
+          TEST3: ${{ secrets.TEST3 }}
         run: |
           envsubst < template.yaml > values.yaml
 
