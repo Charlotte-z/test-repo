@@ -19,15 +19,13 @@ jobs:
         env:
           # Example environment variables - these would need to be set or exported appropriately
           REPLICA_COUNT: 2
-          REPOSITORY: myrepo/myimage
-          TAG: latest
+          TEST2: {{ secrets.TEST2 }}
+          TEST3: {{ secrets.TEST3 }}
         run: |
           envsubst < template.yaml > values.yaml
 
-      - name: Echo the values file
-        run: cat values.yaml
-      # - name: Upload values file to artifacts
-      #   uses: actions/upload-artifact@v2
-      #   with:
-      #     name: values-file
-      #     path: values.yaml
+      - name: Upload values file to artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: values-file
+          path: values.yaml

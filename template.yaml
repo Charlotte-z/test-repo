@@ -1,4 +1,4 @@
 replicaCount: $REPLICA_COUNT
 image:
-  repository: $REPOSITORY
-  tag: $TAG
+  repository: $TEST2
+  tag: $TEST3
