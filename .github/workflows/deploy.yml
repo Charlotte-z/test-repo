@@ -12,7 +12,9 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Run a script
-        run: echo "Repository B action triggered!"
+        run: |
+          echo "Repository B action triggered!"
+          echo "${{ github.event.client_payload.environment }}"
 
       # Assuming environment variables are set up or exported earlier in the job
       - name: Replace variables in template
